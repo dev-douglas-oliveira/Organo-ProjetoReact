@@ -1,3 +1,3 @@
-import { Formulario } from "./Formulario.js";
+import { Formulario } from "./Formulario.jsx";
 
 export default Formulario;
