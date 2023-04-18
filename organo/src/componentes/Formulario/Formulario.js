@@ -1,6 +1,7 @@
 import "./Formulario.css";
-import CampoTexto from "../CampoTexto/index.js";
-import ListaSuspensa from "../ListaSuspensa/index";
+import CampoTexto from "../CampoTexto";
+import ListaSuspensa from "../ListaSuspensa";
+import Botao from "../Botao";
 
 export const Formulario = () => {
     const times = [
@@ -23,6 +24,7 @@ export const Formulario = () => {
                     placeholder="Informe o endereço da imagem"
                 />
                 <ListaSuspensa label="Time" itens={times} />
+                <Botao>Criar Texto</Botao>
             </form>
         </section>
     );
