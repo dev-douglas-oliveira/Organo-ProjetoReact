@@ -4,7 +4,7 @@ import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
 import { useState } from "react";
 
-export const Formulario = () => {
+export const Formulario = (props) => {
     const times = [
         "Programação",
         "Front-End",
@@ -22,7 +22,8 @@ export const Formulario = () => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault();
-        console.log("Form foi submetido =>", nome, cargo, imagem, time);
+        // console.log("Form foi submetido =>", nome, cargo, imagem, time);
+        props.aoColaboradorCadastrado({ nome, cargo, imagem, time });
     };
     return (
         <section className="formulario">
@@ -55,7 +56,7 @@ export const Formulario = () => {
                     valor={time}
                     aoAlterado={(valor) => setTime(valor)}
                 />
-                <Botao>Criar Texto</Botao>
+                <Botao>Criar Card</Botao>
             </form>
         </section>
     );
