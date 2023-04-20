@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Banner from "./componentes/Banner/index.js";
-import Formulario from "./componentes/Formulario/index.js";
-import ListaSuspensa from "./componentes/ListaSuspensa/index.js";
+import Banner from "./componentes/Banner";
+import Formulario from "./componentes/Formulario";
+import Time from "./componentes/Time";
 
 function App() {
     const [colaboradores, setColaboradores] = useState([]);
@@ -19,7 +19,8 @@ function App() {
                     aoNovoColaboradorAdicionado(colaborador)
                 }
             />
-            <ListaSuspensa />
+            <Time nome="Programação" />
+            <Time nome="Froont-End" />
         </div>
     );
 }
