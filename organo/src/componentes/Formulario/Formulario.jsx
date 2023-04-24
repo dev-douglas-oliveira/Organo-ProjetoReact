@@ -14,6 +14,10 @@ export const Formulario = (props) => {
         evento.preventDefault();
         // console.log("Form foi submetido =>", nome, cargo, imagem, time);
         props.aoColaboradorCadastrado({ nome, cargo, imagem, time });
+        setNome(""); //após dar o submit, limpa o campo
+        setCargo(""); //após dar o submit, limpa o campo
+        setImagem(""); //após dar o submit, limpa o campo
+        setTime(""); //após dar o submit, limpa o campo
     };
     return (
         <section className="formulario">
