@@ -2,7 +2,10 @@ import "./Colaborador.css";
 
 export const Colaborador = (props) => {
     return (
-        <div className="colaborador">
+        <div
+            className="colaborador"
+            style={{ backgroundColor: props.corDeFundo }}
+        >
             <img src={props.imagem} alt={props.nome}></img>
             <div className="cabecalho"></div>
             <div className="rodape">

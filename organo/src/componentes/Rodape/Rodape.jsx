@@ -26,7 +26,7 @@ export const Rodape = () => {
                 <img src="/imagens/logo.png" alt="" />
             </section>
             <section>
-                <p>Desenvolvido por dev_ _Douglas.</p>
+                <p>Desenvolvido por dev_ _Douglas</p>
             </section>
         </footer>
     );

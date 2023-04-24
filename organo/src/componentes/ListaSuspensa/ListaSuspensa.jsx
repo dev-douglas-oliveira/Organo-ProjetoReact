@@ -9,6 +9,9 @@ export const ListaSuspensa = (props) => {
                 value={props.valor}
                 required={props.obrigatorio}
             >
+                {/* limpa o campo Time */}
+                <option value=""></option>
+
                 {props.itens?.map((item) => {
                     return <option key={item}>{item}</option>;
                 })}

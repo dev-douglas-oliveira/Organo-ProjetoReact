@@ -18,9 +18,11 @@ export const Time = (props) => {
                 <div className="colaboradores">
                     {props.colaboradores.map((colaborador) => (
                         <Colaborador
+                            key={colaborador.id}
                             nome={colaborador.nome}
                             cargo={colaborador.cargo}
                             imagem={colaborador.imagem}
+                            corDeFundo={props.corPrimaria}
                         />
                     ))}
                 </div>
