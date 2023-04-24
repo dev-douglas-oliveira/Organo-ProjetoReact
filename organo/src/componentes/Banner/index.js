@@ -1,3 +1,3 @@
-import { Banner } from "./Banner.jsx";
+import { Banner } from "./Banner";
 
 export default Banner;
