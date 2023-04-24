@@ -1,0 +1,22 @@
+/* Campos do texto */
+.campo-texto {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels dos campos */
+.campo-texto label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.campo-texto input {
+    background: #ffffff;
+    border: none;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 0px;
+    height: 5rem;
+    width: 100%;
+}
