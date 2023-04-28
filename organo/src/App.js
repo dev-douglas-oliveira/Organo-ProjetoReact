@@ -50,6 +50,10 @@ function App() {
         setColaboradores([...colaboradores, colaborador]); //...colabores espalha todos os antigos e por fim adiciona o ultimo
     };
 
+    function deletarColaborador() {
+        console.log("Deletando colaborador");
+    }
+
     return (
         <div className="App">
             <Banner />
@@ -59,15 +63,16 @@ function App() {
                     aoNovoColaboradorAdicionado(colaborador)
                 }
             />
-            {times.map((time) => (
+            {times.map((time, indice) => (
                 <Time
-                    key={time.nome}
+                    key={indice}
                     nome={time.nome}
                     corPrimaria={time.corPrimaria}
                     corSecundaria={time.corSecundaria}
                     colaboradores={colaboradores.filter(
                         (colaborador) => colaborador.time === time.nome
                     )}
+                    aoDeletar={deletarColaborador}
                 />
             ))}
             <Rodape />

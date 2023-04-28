@@ -1,9 +1,12 @@
 .colaborador {
+    position: relative;
     width: 280px;
+    border-radius: 10px;
+    background-color: black;
 }
 
 .colaborador .cabecalho {
-    background-color: #f0f0f0;
+    background-color: white;
     border-radius: 10px 10px 0px 0px;
 }
 .colaborador img {
@@ -18,7 +21,7 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 10px 10px;
     padding-top: 90px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 .colaborador .rodape h4 {
@@ -34,4 +37,10 @@
     line-height: 22px;
     color: #212121;
     padding: 0 16px;
+}
+
+.colaborador .deletar {
+    position: absolute;
+    right: -10px;
+    top: -10px;
 }

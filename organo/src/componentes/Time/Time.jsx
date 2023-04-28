@@ -16,15 +16,18 @@ export const Time = (props) => {
             <section className="time" style={cssTime}>
                 <h3 style={cssBordaTime}>{props.nome}</h3>
                 <div className="colaboradores">
-                    {props.colaboradores.map((colaborador) => (
-                        <Colaborador
-                            key={colaborador.id}
-                            nome={colaborador.nome}
-                            cargo={colaborador.cargo}
-                            imagem={colaborador.imagem}
-                            corDeFundo={props.corPrimaria}
-                        />
-                    ))}
+                    {props.colaboradores.map((colaborador, indice) => {
+                        return (
+                            <Colaborador
+                                key={indice}
+                                nome={colaborador.nome}
+                                cargo={colaborador.cargo}
+                                imagem={colaborador.imagem}
+                                corDeFundo={props.corPrimaria}
+                                aoDeletar={props.aoDeletar}
+                            />
+                        );
+                    })}
                 </div>
             </section>
         ) : (

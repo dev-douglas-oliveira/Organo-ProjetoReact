@@ -6,6 +6,9 @@ export const Colaborador = (props) => {
             className="colaborador"
             style={{ backgroundColor: props.corDeFundo }}
         >
+            <div className="deletar" onClick={props.aoDeletar}>
+                deletar
+            </div>
             <img src={props.imagem} alt={props.nome}></img>
             <div className="cabecalho"></div>
             <div className="rodape">
