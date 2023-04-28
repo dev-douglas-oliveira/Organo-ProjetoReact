@@ -1,3 +1,4 @@
+import { RiDeleteBin2Line } from "react-icons/ri"; // vc seleciona a pasta com as duas primeiras letras do icone escolhido
 import "./Colaborador.css";
 
 export const Colaborador = (props) => {
@@ -6,9 +7,11 @@ export const Colaborador = (props) => {
             className="colaborador"
             style={{ backgroundColor: props.corDeFundo }}
         >
-            <div className="deletar" onClick={props.aoDeletar}>
-                deletar
-            </div>
+            <RiDeleteBin2Line
+                className="deletar"
+                onClick={props.aoDeletar}
+                size={25}
+            ></RiDeleteBin2Line>
             <img src={props.imagem} alt={props.nome}></img>
             <div className="cabecalho"></div>
             <div className="rodape">
