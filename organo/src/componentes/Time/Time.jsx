@@ -16,6 +16,9 @@ export const Time = (props) => {
             <section className="time" style={cssTime}>
                 <label className="label-cor">Trocar cor do Time</label>
                 <input
+                    onChange={(evento) =>
+                        props.mudarCor(evento.target.value, props.nome)
+                    }
                     value={props.corPrimaria}
                     type="color"
                     className="input-cor"

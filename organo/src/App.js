@@ -5,7 +5,7 @@ import Time from "./componentes/Time";
 import Rodape from "./componentes/Rodape";
 
 function App() {
-    const times = [
+    const [times, setTimes] = useState([
         {
             nome: "Programação",
             corPrimaria: "#57C278",
@@ -41,7 +41,9 @@ function App() {
             corPrimaria: "#FF8A29",
             corSecundaria: "#FFEEDF",
         },
-    ];
+    ]);
+
+    // const [timesList, setTimesList] = useState(times); // transformando a lista de times em uma state
 
     const [colaboradores, setColaboradores] = useState([]);
 
@@ -50,8 +52,24 @@ function App() {
         setColaboradores([...colaboradores, colaborador]); //...colabores espalha todos os antigos e por fim adiciona o ultimo
     };
 
+    //FUNÇÃO PARA DELETAR COLABORADOR
     function deletarColaborador() {
         console.log("Deletando colaborador");
+    }
+
+    //FUNÇÃO PARA COR DO TIME
+    function mudarCorDoTime(cor, nome) {
+        setTimes(
+            times.map((time) => {
+                if (time.nome === nome) {
+                    return {
+                        ...time,
+                        corPrimaria: cor,
+                    };
+                }
+                return time;
+            })
+        );
     }
 
     return (
@@ -65,6 +83,7 @@ function App() {
             />
             {times.map((time, indice) => (
                 <Time
+                    mudarCor={mudarCorDoTime}
                     key={indice}
                     nome={time.nome}
                     corPrimaria={time.corPrimaria}
