@@ -1,6 +1,7 @@
 .colaborador {
     position: relative;
     width: 280px;
+    height: max-content;
     border-radius: 10px;
     background-color: black;
 }

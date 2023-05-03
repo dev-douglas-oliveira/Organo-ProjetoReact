@@ -1,9 +1,15 @@
+import hexToRgba from "hex-to-rgba";
 import "./Time.css";
 import Colaborador from "../Colaborador";
 
 export const Time = (props) => {
-    const cssTime = { backgroundColor: props.corSecundaria };
-    const cssBordaTime = { borderColor: props.corPrimaria };
+    const cssTime = {
+        // backgroundColor: props.cor,
+        backgroundImage: "url(/imagens/fundo.png)",
+        backgroundColor: hexToRgba(props.cor, 0.6),
+    };
+    const cssBordaTime = { borderColor: props.cor };
+
     //pode escrever assim
     //style={cssTime}
 
@@ -14,12 +20,11 @@ export const Time = (props) => {
         // tbm pode escrever da seguinte forma: props.colaborares.length > 0 ? : ""
         props.colaboradores.length > 0 ? (
             <section className="time" style={cssTime}>
-                <label className="label-cor">Trocar cor do Time</label>
                 <input
                     onChange={(evento) =>
                         props.mudarCor(evento.target.value, props.nome)
                     }
-                    value={props.corPrimaria}
+                    value={props.cor}
                     type="color"
                     className="input-cor"
                 />
@@ -32,7 +37,7 @@ export const Time = (props) => {
                                 nome={colaborador.nome}
                                 cargo={colaborador.cargo}
                                 imagem={colaborador.imagem}
-                                corDeFundo={props.corPrimaria}
+                                corDeFundo={props.cor}
                                 aoDeletar={props.aoDeletar}
                             />
                         );
