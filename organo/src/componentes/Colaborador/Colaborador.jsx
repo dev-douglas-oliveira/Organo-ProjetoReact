@@ -2,6 +2,11 @@ import { RiDeleteBin2Line } from "react-icons/ri"; // vc seleciona a pasta com a
 import "./Colaborador.css";
 
 export const Colaborador = (props) => {
+    //FUNÇÃO RESPONSÁVEL POR TRAZER O ID DO COLABORADOR E SER EXECUTADA NO ONCLICK
+    function deletarColaborador() {
+        props.aoDeletar(props.id);
+    }
+
     return (
         <div
             className="colaborador"
@@ -9,7 +14,8 @@ export const Colaborador = (props) => {
         >
             <RiDeleteBin2Line
                 className="deletar"
-                onClick={props.aoDeletar}
+                // onClick={() => props.aoDeletar(props.id)} escreve dessa forma ou da forma abaixo
+                onClick={deletarColaborador}
                 size={25}
             ></RiDeleteBin2Line>
             <img src={props.imagem} alt={props.nome}></img>

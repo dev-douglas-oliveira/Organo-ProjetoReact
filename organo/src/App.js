@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid"; //para criar um id unico para cada elemento
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 import Banner from "./componentes/Banner";
 import Formulario from "./componentes/Formulario";
 import Time from "./componentes/Time";
@@ -255,8 +257,30 @@ function App() {
     };
 
     //FUNÇÃO PARA DELETAR COLABORADOR
-    function deletarColaborador() {
-        console.log("Deletando colaborador");
+    function deletarColaborador(id) {
+        const colaborador = colaboradores.find(
+            (colaborador) => colaborador.id === id
+        );
+        confirmAlert({
+            title: "Excluir colaborador",
+            message: `Tem certeza que deseja excluir o colaborador ${colaborador.nome} do time de ${colaborador.time}?`,
+            buttons: [
+                {
+                    label: "Sim",
+                    onClick: () => {
+                        setColaboradores(
+                            colaboradores.filter(
+                                (colaborador) => colaborador.id !== id
+                            )
+                        );
+                    },
+                },
+                {
+                    label: "Cancelar",
+                    onClick: () => {},
+                },
+            ],
+        });
     }
 
     //FUNÇÃO PARA COR DO TIME

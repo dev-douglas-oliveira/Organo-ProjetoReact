@@ -34,6 +34,7 @@ export const Time = (props) => {
                         return (
                             <Colaborador
                                 key={indice}
+                                id={colaborador.id}
                                 nome={colaborador.nome}
                                 cargo={colaborador.cargo}
                                 imagem={colaborador.imagem}
