@@ -283,7 +283,7 @@ function App() {
         });
     }
 
-    //FUNÇÃO PARA COR DO TIME
+    //FUNÇÃO PARA MUDAR COR DO TIME
     function mudarCorDoTime(cor, id) {
         setTimes(
             times.map((time) => {
