@@ -22,7 +22,7 @@ export const Time = (props) => {
             <section className="time" style={cssTime}>
                 <input
                     onChange={(evento) =>
-                        props.mudarCor(evento.target.value, props.nome)
+                        props.mudarCor(evento.target.value, props.id)
                     }
                     value={props.cor}
                     type="color"

@@ -28,11 +28,13 @@
 }
 
 .App .titulo-time {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 8rem;
+    justify-content: center;
     border: 0.25rem solid;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 1rem;
+    padding: 2rem;
     font-size: 2rem;
-    margin: 2rem 20rem;
     color: rgb(81, 127, 226);
 }
