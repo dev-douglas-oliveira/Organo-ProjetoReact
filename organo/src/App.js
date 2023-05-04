@@ -251,11 +251,6 @@ function App() {
     //INICIA APP COM LISTA INICIAL DE COLABORADORES
     const [colaboradores, setColaboradores] = useState(inicial);
 
-    const aoNovoColaboradorAdicionado = (colaborador) => {
-        console.log(colaborador);
-        setColaboradores([...colaboradores, colaborador]); //...colabores espalha todos os antigos e por fim adiciona o ultimo
-    };
-
     //FUNÇÃO PARA DELETAR COLABORADOR
     function deletarColaborador(id) {
         const colaborador = colaboradores.find(
@@ -295,13 +290,19 @@ function App() {
         );
     }
 
+    //FUNÇÃO PARA CADASTRAR TIME
+    function cadastrarTime(novoTime) {
+        setTimes([...times, { ...novoTime, id: uuidv4() }]);
+    }
+
     return (
         <div className="App">
             <Banner />
             <Formulario
+                aoCadastrarTime={cadastrarTime}
                 nomeDosTimes={times.map((time) => time.nome)}
-                aoColaboradorCadastrado={(colaborador) =>
-                    aoNovoColaboradorAdicionado(colaborador)
+                aoCadastrar={(colaborador) =>
+                    setColaboradores([...colaboradores, colaborador])
                 }
             />
             <section>
@@ -309,6 +310,7 @@ function App() {
                 {times.map((time, indice) => (
                     <Time
                         mudarCor={mudarCorDoTime}
+                        nome={time.nome}
                         key={indice}
                         id={time.id}
                         cor={time.cor}
