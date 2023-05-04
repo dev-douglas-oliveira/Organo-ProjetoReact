@@ -1,22 +1,27 @@
 /* Campos do texto */
-.campo-texto {
+.campo {
     margin: 1.5rem 0;
     display: flex;
     flex-direction: column;
 }
 
 /* Labels dos campos */
-.campo-texto label {
+.campo label {
     display: block;
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
 }
 
-.campo-texto input {
+.campo input {
     background: #ffffff;
     border: none;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     border-radius: 0px;
     height: 5rem;
     width: 100%;
+}
+
+.campo-color input {
+    padding: 0.3125rem 1.5rem;
+    height: 3rem;
 }
