@@ -1,28 +1,42 @@
 import { RiDeleteBin2Line } from "react-icons/ri"; // vc seleciona a pasta com as duas primeiras letras do icone escolhido
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import "./Colaborador.css";
 
-export const Colaborador = (props) => {
+export const Colaborador = ({
+    colaborador,
+    corDeFundo,
+    aoDeletar,
+    aoFavoritar,
+}) => {
     //FUNÇÃO RESPONSÁVEL POR TRAZER O ID DO COLABORADOR E SER EXECUTADA NO ONCLICK
     function excluirColaborador() {
-        props.aoDeletar(props.id);
+        aoDeletar(colaborador.id);
+    }
+
+    function favoritar() {
+        aoFavoritar(colaborador.id);
     }
 
     return (
-        <div
-            className="colaborador"
-            style={{ backgroundColor: props.corDeFundo }}
-        >
+        <div className="colaborador" style={{ backgroundColor: corDeFundo }}>
             <RiDeleteBin2Line
                 className="deletar"
-                // onClick={() => props.aoDeletar(props.id)} escreve dessa forma ou da forma abaixo
+                // onClick={() => aoDeletar(id)} escreve dessa forma ou da forma abaixo
                 onClick={excluirColaborador}
                 size={25}
             ></RiDeleteBin2Line>
-            <img src={props.imagem} alt={props.nome}></img>
+            <img src={colaborador.imagem} alt={colaborador.nome}></img>
             <div className="cabecalho"></div>
             <div className="rodape">
-                <h4>{props.nome}</h4>
-                <h5>{props.cargo}</h5>
+                <h4>{colaborador.nome}</h4>
+                <h5>{colaborador.cargo}</h5>
+                <div className="favoritar">
+                    {colaborador.favorito ? (
+                        <AiFillHeart size={25} onClick={favoritar} />
+                    ) : (
+                        <AiOutlineHeart size={25} onClick={favoritar} />
+                    )}
+                </div>
             </div>
         </div>
     );

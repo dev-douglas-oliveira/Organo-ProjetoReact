@@ -3,11 +3,11 @@
     width: 280px;
     height: max-content;
     border-radius: 10px;
-    background-color: black;
+    background-color: #000000;
 }
 
 .colaborador .cabecalho {
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 10px 10px 0px 0px;
 }
 .colaborador img {
@@ -44,4 +44,8 @@
     position: absolute;
     right: -10px;
     top: -10px;
+}
+
+.favoritar {
+    margin-top: 20px;
 }
